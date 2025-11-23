@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Wand of Chromatic Orb</name>
+		<author url="https://github.com/hibrahimylmz/Indra">hibrahimylmz</author>
+		<update version="0.0.1">
+			<file name="WandofChromaticOrb.xml" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/WandofChromaticOrb.xml" />
+		</update>
+	</info>
+	
+	<!-- Fernian Ash Wand (Fire) -->
+	<element name="Wand of Chromatic Orb (Fernian Ash)" type="Magic Item" source="Homebrew" id="ID_HOMEBREW_MAGIC_ITEM_WAND_CHROMATIC_ORB_FERNIAN_ASH">
+		<description>
+			<p>This wand has 7 charges. While holding it, you can use an action to expend 1 or more of its charges to cast the chromatic orb spell from it, but you can only choose fire damage (associated with the Fernian Ash wood from which the wand is made). For 1 charge, you cast the 1st-level version of the spell. You can increase the spell slot level by one for each additional charge you expend.</p>
+			<p class="indent">The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.</p>
+		</description>
+		<setters>
+			<set name="category">Wands</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="type">Wand</set>
+			<set name="rarity">Uncommon</set>
+			<set name="charges">7</set>
+		</setters>
+	</element>
+
+	<!-- Kythrian Machineel Wand (Acid or Poison) -->
+	<element name="Wand of Chromatic Orb (Kythrian Machineel)" type="Magic Item" source="Homebrew" id="ID_HOMEBREW_MAGIC_ITEM_WAND_CHROMATIC_ORB_KYTHRIAN_MACHINEEL">
+		<description>
+			<p>This wand has 7 charges. While holding it, you can use an action to expend 1 or more of its charges to cast the chromatic orb spell from it, but you can only choose acid or poison damage (associated with the Kythrian Machineel wood from which the wand is made). For 1 charge, you cast the 1st-level version of the spell. You can increase the spell slot level by one for each additional charge you expend.</p>
+			<p class="indent">The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.</p>
+		</description>
+		<setters>
+			<set name="category">Wands</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="type">Wand</set>
+			<set name="rarity">Uncommon</set>
+			<set name="charges">7</set>
+		</setters>
+	</element>
+
+	<!-- Lamannian Oak Wand (Lightning or Thunder) -->
+	<element name="Wand of Chromatic Orb (Lamannian Oak)" type="Magic Item" source="Homebrew" id="ID_HOMEBREW_MAGIC_ITEM_WAND_CHROMATIC_ORB_LAMANNIAN_OAK">
+		<description>
+			<p>This wand has 7 charges. While holding it, you can use an action to expend 1 or more of its charges to cast the chromatic orb spell from it, but you can only choose lightning or thunder damage (associated with the Lamannian Oak wood from which the wand is made). For 1 charge, you cast the 1st-level version of the spell. You can increase the spell slot level by one for each additional charge you expend.</p>
+			<p class="indent">The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.</p>
+		</description>
+		<setters>
+			<set name="category">Wands</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="type">Wand</set>
+			<set name="rarity">Uncommon</set>
+			<set name="charges">7</set>
+		</setters>
+	</element>
+
+	<!-- Risian Pine Wand (Cold) -->
+	<element name="Wand of Chromatic Orb (Risian Pine)" type="Magic Item" source="Homebrew" id="ID_HOMEBREW_MAGIC_ITEM_WAND_CHROMATIC_ORB_RISIAN_PINE">
+		<description>
+			<p>This wand has 7 charges. While holding it, you can use an action to expend 1 or more of its charges to cast the chromatic orb spell from it, but you can only choose cold damage (associated with the Risian Pine wood from which the wand is made). For 1 charge, you cast the 1st-level version of the spell. You can increase the spell slot level by one for each additional charge you expend.</p>
+			<p class="indent">The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.</p>
+		</description>
+		<setters>
+			<set name="category">Wands</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="type">Wand</set>
+			<set name="rarity">Uncommon</set>
+			<set name="charges">7</set>
+		</setters>
+	</element>
+</elements>

@@ -11,5 +11,6 @@
 	<files>
 		<file name="AntiMage.xml" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/AntiMage.xml" />
 		<file name="spell.xml" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/spell.xml" />
+		<file name="WandofChromaticOrb.xml" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/WandofChromaticOrb.xml" />
 	</files>
 </index>
