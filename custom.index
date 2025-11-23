@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<index>
+	<info>
+		<name>Indra Homebrew</name>
+		<description>D&amp;D 5e Homebrew İçeriği - Anti-Mage Fighter Alt Sınıfı</description>
+		<author url="https://github.com/hibrahimylmz/Indra">hibrahimylmz</author>
+		<update version="0.0.1">
+			<file name="custom.index" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/custom.index" />
+		</update>
+	</info>
+	<files>
+		<file name="AntiMage.xml" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/AntiMage.xml" />
+		<file name="spell.xml" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/spell.xml" />
+	</files>
+</index>

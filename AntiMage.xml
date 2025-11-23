@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Anti-Mage</name>
+		<description>The Anti-Mage subclass for Fighter</description>
+		<author url="https://github.com/hibrahimylmz/Indra">hibrahimylmz</author>
+		<update version="0.0.1">
+			<file name="AntiMage.xml" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/AntiMage.xml" />
+		</update>
+	</info>
+	
+	<element name="Anti-Mage" type="Archetype" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FIGHTER_ANTI_MAGE">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>After years of battle, you've realized that no matter how strong your body becomes, physical might will never rival magical power. You've witnessed the devastating potential of magic users and grown wary of their abilities. Over time, this wariness turned into deep resentment—a burning desire to see mages brought down to the same level of vulnerability you feel in their presence. Determined to find a way to counter their power, you embarked on a relentless search for answers. After exhaustive research, you stumbled upon an ancient book—an artifact of the extinct sect known as the Ts'ere-Jira. Though the book's contents initially seemed like gibberish, you slowly began to decipher its pages. With each revelation, a dark power awakened within you.</p>
+			<div element="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_POWER_OF_THE_BOOK" />
+			<div element="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_MAGIC_SIPHONING" />
+			<div element="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_SHUTDOWN" />
+			<div element="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_CUT_THE_FLOW" />
+			<div element="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_FAST_CASTING" />
+			<div element="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_MAGIC_WRECKING" />
+		</description>
+		<sheet display="false">
+			<description>You hunt mages and drain their magical power.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_POWER_OF_THE_BOOK" level="3" />
+			<grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_MAGIC_SIPHONING" level="3" />
+			<grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_SHUTDOWN" level="7" />
+			<grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_CUT_THE_FLOW" level="10" />
+			<grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_FAST_CASTING" level="15" />
+			<grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_MAGIC_WRECKING" level="18" />
+		</rules>
+	</element>
+
+	<element name="Power of the Book" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_POWER_OF_THE_BOOK">
+		<description>
+			<p><em>3rd-level Anti-Mage feature</em></p>
+			<p>When you choose this archetype at 3rd level, the book begins to grant you access to new power, allowing you to cast certain spells—much like a sorcerer. However, you do not use spell slots. Your spellcasting ability is your Strength.</p>
+			<p class="indent"><strong>Anti-Mage Spells List:</strong></p>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td>Arcane Smite, Countertrip, Dark I</td></tr>
+				<tr><td>2nd</td><td>Disarm, Ward, Dark II</td></tr>
+				<tr><td>3rd</td><td>Spellbreaking Smite, Absorb Energy, Dark III</td></tr>
+				<tr><td>4th</td><td>Agonizing Smite, Twin Bolts of Demonfire</td></tr>
+				<tr><td>5th</td><td>Darkbolt</td></tr>
+				<tr><td>6th</td><td>Voyage into Shadow, Antimagic Blast</td></tr>
+				<tr><td>7th</td><td>Withering Destruction</td></tr>
+				<tr><td>8th</td><td>Tomb of Night</td></tr>
+				<tr><td>9th</td><td>Shadow Time</td></tr>
+			</table>
+			<p class="indent"><em>Note: You cast these spells using stolen spell slots from Magic Siphoning. Your spellcasting ability is Strength.</em></p>
+		</description>
+		<sheet>
+			<description>You can cast Anti-Mage spells using stolen spell slots. Your spellcasting ability is Strength (spell save DC {{anti-mage:dc}}, spell attack +{{anti-mage:attack}}). You can prepare {{anti-mage:prepared}} Anti-Mage spells.</description>
+		</sheet>
+		<rules>
+			<stat name="anti-mage:dc" value="8" />
+			<stat name="anti-mage:dc" value="proficiency" />
+			<stat name="anti-mage:dc" value="strength:modifier" />
+			<stat name="anti-mage:attack" value="proficiency" />
+			<stat name="anti-mage:attack" value="strength:modifier" />
+			<stat name="anti-mage:spellcasting:slots:1" value="0" level="3" />
+			<stat name="anti-mage:spellcasting:slots:2" value="0" level="3" />
+			<stat name="anti-mage:spellcasting:slots:3" value="0" level="3" />
+			<stat name="anti-mage:spellcasting:slots:4" value="0" level="3" />
+			<stat name="anti-mage:spellcasting:slots:5" value="0" level="3" />
+			<stat name="anti-mage:spellcasting:slots:6" value="0" level="3" />
+			<stat name="anti-mage:spellcasting:slots:7" value="0" level="3" />
+			<stat name="anti-mage:spellcasting:slots:8" value="0" level="3" />
+			<stat name="anti-mage:spellcasting:slots:9" value="0" level="3" />
+			<stat name="anti-mage:prepared" value="strength:modifier" />
+			<stat name="anti-mage:prepared" value="level:fighter" />
+			<stat name="anti-mage:prepared" value="-1" />
+			
+			<!-- Spell list grants - commented out until actual spell files are created -->
+			<!-- 1st level spells -->
+			<!-- <grant type="Spell" id="ID_HOMEBREW_SPELL_ARCANE_SMITE" spellcasting="Anti-Mage" level="3" />
+			<grant type="Spell" id="ID_HOMEBREW_SPELL_COUNTERTRIP" spellcasting="Anti-Mage" level="3" />
+			<grant type="Spell" id="ID_HOMEBREW_SPELL_DARK_I" spellcasting="Anti-Mage" level="3" /> -->
+			
+			<!-- 2nd level spells -->
+			<!-- <grant type="Spell" id="ID_HOMEBREW_SPELL_DISARM" spellcasting="Anti-Mage" level="3" />
+			<grant type="Spell" id="ID_HOMEBREW_SPELL_WARD" spellcasting="Anti-Mage" level="3" />
+			<grant type="Spell" id="ID_HOMEBREW_SPELL_DARK_II" spellcasting="Anti-Mage" level="3" /> -->
+			
+			<!-- 3rd level spells -->
+			<!-- <grant type="Spell" id="ID_HOMEBREW_SPELL_SPELLBREAKING_SMITE" spellcasting="Anti-Mage" level="3" />
+			<grant type="Spell" id="ID_HOMEBREW_SPELL_ABSORB_ENERGY" spellcasting="Anti-Mage" level="3" />
+			<grant type="Spell" id="ID_HOMEBREW_SPELL_DARK_III" spellcasting="Anti-Mage" level="3" /> -->
+			
+			<!-- 4th level spells -->
+			<!-- <grant type="Spell" id="ID_HOMEBREW_SPELL_AGONIZING_SMITE" spellcasting="Anti-Mage" level="3" />
+			<grant type="Spell" id="ID_HOMEBREW_SPELL_TWIN_BOLTS_OF_DEMONFIRE" spellcasting="Anti-Mage" level="3" /> -->
+			
+			<!-- 5th level spells -->
+			<!-- <grant type="Spell" id="ID_HOMEBREW_SPELL_DARKBOLT" spellcasting="Anti-Mage" level="3" /> -->
+			
+			<!-- 6th level spells -->
+			<!-- <grant type="Spell" id="ID_HOMEBREW_SPELL_VOYAGE_INTO_SHADOW" spellcasting="Anti-Mage" level="3" />
+			<grant type="Spell" id="ID_HOMEBREW_SPELL_ANTIMAGIC_BLAST" spellcasting="Anti-Mage" level="3" /> -->
+			
+			<!-- 7th level spells -->
+			<!-- <grant type="Spell" id="ID_HOMEBREW_SPELL_WITHERING_DESTRUCTION" spellcasting="Anti-Mage" level="3" /> -->
+			
+			<!-- 8th level spells -->
+			<!-- <grant type="Spell" id="ID_HOMEBREW_SPELL_TOMB_OF_NIGHT" spellcasting="Anti-Mage" level="3" /> -->
+			
+			<!-- 9th level spells -->
+			<!-- <grant type="Spell" id="ID_HOMEBREW_SPELL_SHADOW_TIME" spellcasting="Anti-Mage" level="3" /> -->
+		</rules>
+	</element>
+
+	<element name="Magic Siphoning" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_MAGIC_SIPHONING">
+		<description>
+			<p><em>3rd-level Anti-Mage feature</em></p>
+			<p>At 3rd level, your attacks and extra attacks steal a certain number of spell slots from your opponents, depending on your level. You lose these spell slots after a short or long rest. You deal an additional d4 of necrotic damage for every spell slot an opponent cannot provide.</p>
+			<p class="indent">You always start by stealing the weakest spell slot from your opponent. For example, against a 5th-level wizard, you will steal their 4 (1st-level) spell slots first, then their 3 (2nd-level) spell slots, and so on.</p>
+			<table>
+				<thead>
+					<tr><td>Fighter Level</td><td>Stolen Spell Slots Per Hit</td></tr>
+				</thead>
+				<tr><td>3rd</td><td>1 spell slot</td></tr>
+				<tr><td>7th</td><td>2 spell slots</td></tr>
+				<tr><td>11th</td><td>3 spell slots</td></tr>
+				<tr><td>15th</td><td>4 spell slots</td></tr>
+				<tr><td>19th</td><td>5 spell slots</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description level="3">Your attacks steal 1 spell slot from spellcasters. If they have no spell slots, you deal an additional 1d4 necrotic damage. Stolen spell slots are lost after a short or long rest.</description>
+			<description level="7">Your attacks steal 2 spell slots from spellcasters. If they have no spell slots, you deal an additional 1d4 necrotic damage per missing slot. Stolen spell slots are lost after a short or long rest.</description>
+			<description level="11">Your attacks steal 3 spell slots from spellcasters. If they have no spell slots, you deal an additional 1d4 necrotic damage per missing slot. Stolen spell slots are lost after a short or long rest.</description>
+			<description level="15">Your attacks steal 4 spell slots from spellcasters. If they have no spell slots, you deal an additional 1d4 necrotic damage per missing slot. Stolen spell slots are lost after a short or long rest.</description>
+			<description level="19">Your attacks steal 5 spell slots from spellcasters. If they have no spell slots, you deal an additional 1d4 necrotic damage per missing slot. Stolen spell slots are lost after a short or long rest.</description>
+		</sheet>
+	</element>
+
+	<element name="Shutdown" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_SHUTDOWN">
+		<description>
+			<p><em>7th-level Anti-Mage feature</em></p>
+			<p>At 7th level, you begin to recognize your opponents' spellcasting patterns, allowing you to strike at the perfect moment to interrupt them. If an opponent casts a spell, you may use your reaction to dash up to 15 feet and, if you are in range, make a single melee attack targeting the spellcaster. This melee attack interrupts the spell before it is cast.</p>
+			<p class="indent">You may use this ability a number of times equal to your Strength modifier (minimum of one) per day.</p>
+			<p class="indent">You can use the dash without the melee attack or the melee attack without the dash. The dash can allow you to dodge an area spell, but not a spell directly targeting you. The target of the melee attack must be the one casting the spell.</p>
+		</description>
+		<sheet action="Reaction" usage="{{shutdown:usage}}/Day">
+			<description>When an opponent casts a spell, you can dash up to 15 feet and make a single melee attack against the spellcaster, interrupting the spell. You can use the dash or attack separately. The dash can help you dodge area spells, but not spells targeting you directly.</description>
+		</sheet>
+		<rules>
+			<stat name="shutdown:usage" value="1" bonus="base" />
+			<stat name="shutdown:usage" value="strength:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Cut the Flow" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_CUT_THE_FLOW">
+		<description>
+			<p><em>10th-level Anti-Mage feature</em></p>
+			<p>At 10th level, you have learned to unbalance the magical flow of your opponents. Whenever you deal damage to an opponent, they cannot use cantrips on their next turn. Additionally, your Indomitable ability now has advantage against spells.</p>
+		</description>
+		<sheet>
+			<description>When you deal damage to an opponent, they cannot use cantrips on their next turn. Your Indomitable ability has advantage against spells.</description>
+		</sheet>
+	</element>
+
+	<element name="Fast Casting" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_FAST_CASTING">
+		<description>
+			<p><em>15th-level Anti-Mage feature</em></p>
+			<p>At 15th level, you have mastered the combination of spells and attacks. You can now cast a spell in place of your extra attacks. Additionally, you gain a +2 bonus to initiative.</p>
+		</description>
+		<sheet>
+			<description>You can cast a spell in place of your extra attacks.</description>
+		</sheet>
+		<rules>
+			<stat name="initiative" value="2" bonus="fast casting" />
+		</rules>
+	</element>
+
+	<element name="Magic Wrecking" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ANTI_MAGE_MAGIC_WRECKING">
+		<description>
+			<p><em>18th-level Anti-Mage feature</em></p>
+			<p>At 18th level, you have fully deciphered the book and can neutralize any magic user. As an action on your turn, you may target an opponent to immediately steal their strongest spell slot and prevent them from using any spells during their next turn.</p>
+			<p class="indent">This ability can be used only once per short or long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>Target an opponent to immediately steal their strongest spell slot and prevent them from using any spells during their next turn.</description>
+		</sheet>
+	</element>
+</elements>
