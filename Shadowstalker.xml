@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Shadowstalker Conclave</name>
+        <description>Ranger archetype for stealthy ambush hunters (Shadowstalker Conclave)</description>
+        <author url="https://github.com/hibrahimylmz/Indra">hibrahimylmz</author>
+        <update version="0.0.1">
+            <file name="Shadowstalker.xml" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/Shadowstalker.xml" />
+        </update>
+    </info>
+
+    <element name="Shadowstalker Conclave" type="Archetype" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_RANGER_SHADOWSTALKER">
+        <supports>Ranger Conclave</supports>
+        <description>
+            <p>Shadowstalkers are elusive hunters who walk the knife-edge between predator and phantom. They combine nature's attunement, relentless pursuit, and cunning lethality—striking from concealment and vanishing before retaliation.</p>
+            <div element="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_MAGIC" />
+            <div element="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_SILENT_HUNTER" />
+            <div element="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_CUNNING_STRIKE" />
+            <div element="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_EVASION" />
+            <div element="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_SUDDEN_STRIKE" />
+            <div element="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_UNCANNY_DODGE" />
+        </description>
+        <sheet display="false">
+            <description>Elusive ambusher: bonus hide, stealth expertise, precision damage, and mobility-focused high-level options.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_SILENT_HUNTER" level="3" />
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_CUNNING_STRIKE" level="3" />
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_EVASION" level="7" />
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_SUDDEN_STRIKE" level="11" />
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_UNCANNY_DODGE" level="15" />
+        </rules>
+    </element>
+
+    <element name="Shadowstalker Magic" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_MAGIC">
+        <description>
+            <p><em>3rd-level Shadowstalker feature</em></p>
+            <p>Your bond with the wild grants you spells tailored for deception, infiltration, and sudden strikes. These spells are always prepared for you and do not count against your prepared spells. Wisdom is your spellcasting ability for these spells.</p>
+            <p class="indent"><strong>Shadowstalker Spells</strong></p>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>3rd</td><td>disguise self</td></tr>
+                <tr><td>5th</td><td>pass without trace</td></tr>
+                <tr><td>9th</td><td>fear</td></tr>
+                <tr><td>13th</td><td>greater invisibility</td></tr>
+                <tr><td>17th</td><td>seeming</td></tr>
+            </table>
+        </description>
+        <sheet>
+            <description>You always have Shadowstalker spells prepared (Wisdom is your spellcasting ability; spell save DC {{shadowstalker:dc}}, spell attack +{{shadowstalker:attack}}).</description>
+        </sheet>
+        <rules>
+            <stat name="shadowstalker:dc" value="8" />
+            <stat name="shadowstalker:dc" value="proficiency" />
+            <stat name="shadowstalker:dc" value="wisdom:modifier" />
+            <stat name="shadowstalker:attack" value="proficiency" />
+            <stat name="shadowstalker:attack" value="wisdom:modifier" />
+            <!-- Grants commented out: include actual Spell elements if present in spell files -->
+        </rules>
+    </element>
+
+    <element name="Silent Hunter" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_SILENT_HUNTER">
+        <description>
+            <p><em>3rd-level Shadowstalker feature</em></p>
+            <p>You gain proficiency in Stealth. If you are already proficient, your proficiency bonus is doubled for Stealth. In addition, you can take the Hide action as a bonus action.</p>
+        </description>
+        <sheet>
+            <description level="3">Gain Stealth proficiency or expertise. Hide is a bonus action for you.</description>
+        </sheet>
+        <rules>
+            <stat name="skill:stealth:proficiency" value="true" />
+            <stat name="skill:stealth:expertise" value="true" />
+            <stat name="can:hide:bonusaction" value="true" />
+        </rules>
+    </element>
+
+    <element name="Cunning Strike" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_CUNNING_STRIKE">
+        <description>
+            <p><em>3rd-level Shadowstalker feature</em></p>
+            <p>Once per turn, when you hit a creature with a finesse or ranged weapon attack and you have advantage (or an ally is within 5 feet of the target and not incapacitated), you deal extra damage.</p>
+            <table>
+                <thead><tr><td>Ranger Level</td><td>Extra Damage</td></tr></thead>
+                <tr><td>3rd</td><td>1d6</td></tr>
+                <tr><td>7th</td><td>2d6</td></tr>
+                <tr><td>11th</td><td>3d6</td></tr>
+                <tr><td>15th</td><td>4d6</td></tr>
+            </table>
+        </description>
+        <sheet>
+            <description level="3">Cunning Strike: +1d6 on qualifying hit (scales with level).</description>
+            <description level="7">Cunning Strike: +2d6</description>
+            <description level="11">Cunning Strike: +3d6</description>
+            <description level="15">Cunning Strike: +4d6</description>
+        </sheet>
+        <rules>
+            <stat name="cunningstrike:damage" value="1d6" level="3" />
+            <stat name="cunningstrike:damage" value="2d6" level="7" />
+            <stat name="cunningstrike:damage" value="3d6" level="11" />
+            <stat name="cunningstrike:damage" value="4d6" level="15" />
+        </rules>
+    </element>
+
+    <element name="Evasion (Shadowstalker)" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_EVASION">
+        <description>
+            <p><em>7th-level Shadowstalker feature</em></p>
+            <p>When you are subjected to an effect that allows a Dexterity saving throw to take half damage, you instead take no damage on a success and only half damage on a failure.</p>
+        </description>
+        <sheet>
+            <description level="7">Evasion: No damage on successful Dex save, half on failure.</description>
+        </sheet>
+    </element>
+
+    <element name="Sudden Strike" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_SUDDEN_STRIKE">
+        <description>
+            <p><em>11th-level Shadowstalker feature</em></p>
+            <p>When you take the Attack action, you can make one additional attack as a bonus action. That bonus attack can benefit from Cunning Strike even if you've already used it this turn, but you can't apply Cunning Strike to the same target more than once in a turn.</p>
+        </description>
+        <sheet>
+            <description level="11">When taking the Attack action, make one extra attack as a bonus action (Cunning Strike may apply).</description>
+        </sheet>
+    </element>
+
+    <element name="Uncanny Dodge (Shadowstalker)" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_UNCANNY_DODGE">
+        <description>
+            <p><em>15th-level Shadowstalker feature</em></p>
+            <p>When an attacker you can see hits you, you can use your reaction to halve the damage.</p>
+        </description>
+        <sheet action="Reaction">
+            <description level="15">Use your reaction to halve damage from an attacker you can see.</description>
+        </sheet>
+    </element>
+
+    <!-- Optional replacement features (summary entries) -->
+    <element name="Ambush Master (Optional)" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_AMBUSH_MASTER">
+        <description>
+            <p><em>Optional replacement for Primal Awareness</em></p>
+            <p>You have advantage on initiative rolls. In the first round of combat, the first creature you hit becomes marked until the start of your next turn; all attack rolls against the marked target have advantage.</p>
+        </description>
+    </element>
+
+    <element name="Superior Mobility (Optional)" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_SUPERIOR_MOBILITY">
+        <description>
+            <p><em>Optional replacement for level 6 ranger features</em></p>
+            <p>Your walking speed increases by 10 feet. If you have a climbing or swimming speed, those also increase by 10 feet.</p>
+        </description>
+    </element>
+
+    <element name="Dread Ambusher (Optional)" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_DREAD_AMBUSHER">
+        <description>
+            <p><em>Optional replacement for level 10 ranger features</em></p>
+            <p>Add your Wisdom modifier to initiative. On the first turn of combat your walking speed increases by 10 feet. If you take the Attack action that turn you can make one additional attack; on a hit with that attack deal an extra 1d8 weapon damage.</p>
+        </description>
+    </element>
+
+    <element name="Cloak of Dusk (Optional)" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_CLOAK_OF_DUSK">
+        <description>
+            <p><em>Optional replacement for Feral Senses</em></p>
+            <p>While in dim light or darkness, you are invisible to creatures relying on darkvision. This invisibility ends if you attack or cast a spell, but resumes at the start of your next turn if you remain in dim light or darkness.</p>
+        </description>
+    </element>
+
+    <element name="Ghost of the Wilds (Optional)" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_GHOST_OF_THE_WILDS">
+        <description>
+            <p><em>Optional replacement for Foe Slayer</em></p>
+            <p>When you hit a creature with a weapon attack while hidden, deal an extra 3d8 weapon damage. If this reduces the target to 0 hit points, you can immediately attempt to Hide as part of the same action.</p>
+        </description>
+    </element>
+
+</elements>
