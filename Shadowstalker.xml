@@ -10,7 +10,7 @@
     </info>
 
     <element name="Shadowstalker Conclave" type="Archetype" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_RANGER_SHADOWSTALKER">
-        <supports>Ranger Conclave</supports>
+        <supports>Ranger</supports>
         <description>
             <p>Shadowstalkers are elusive hunters who walk the knife-edge between predator and phantom. They combine nature's attunement, relentless pursuit, and cunning lethality—striking from concealment and vanishing before retaliation.</p>
             <div element="ID_HOMEBREW_ARCHETYPE_FEATURE_SHADOWSTALKER_MAGIC" />
