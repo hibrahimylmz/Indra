@@ -4,7 +4,7 @@
         <name>Shadowstalker Conclave</name>
         <description>Ranger archetype for stealthy ambush hunters (Shadowstalker Conclave)</description>
         <author url="https://github.com/hibrahimylmz/Indra">hibrahimylmz</author>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="Shadowstalker.xml" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/Shadowstalker.xml" />
         </update>
     </info>

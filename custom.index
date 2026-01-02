@@ -4,7 +4,7 @@
 		<name>Indra Homebrew</name>
 		<description>D&amp;D 5e Homebrew İçeriği - Anti-Mage Fighter Alt Sınıfı</description>
 		<author url="https://github.com/hibrahimylmz/Indra">hibrahimylmz</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="custom.index" url="https://raw.githubusercontent.com/hibrahimylmz/Indra/main/custom.index" />
 		</update>
 	</info>
